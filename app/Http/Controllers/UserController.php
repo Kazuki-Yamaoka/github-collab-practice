@@ -24,7 +24,7 @@ class UserController extends Controller
         $user = new User;
         $user->name = $validated[name];
         $user->email = $validated[email];
-        $user->password = $validated(hash::make[password]);
+        $user->password = Hash::make($validated[password]);
         $user->save();
 
         return redirect('/users');
